@@ -10,12 +10,12 @@ O sistema contempla entidades como usuários, alunos, professores, livros, empr�
 
 ## 🎯 Objetivos do Projeto
 
-- Aplicar conceitos de **modelagem conceitual, lógica e física**
-- Implementar **ORM com SQLAlchemy (Declarative Base)**
-- Utilizar **herança ORM** para representar especializações
-- Garantir **integridade referencial** entre entidades
-- Organizar o projeto de forma profissional e escalável
-- Separar claramente **código de domínio**, **testes** e **exploração**
+- Aplicar conceitos de **modelagem conceitual, lógica e física**;
+- Implementar **ORM com SQLAlchemy**;
+- Utilizar **herança ORM** para representar especializações/generalizações;
+- Garantir **integridade referencial** entre entidades;
+- Organizar o projeto de forma profissional e escalável;
+- Separar claramente **código de domínio**, **testes** e **exploração**.
 
 ---
 
