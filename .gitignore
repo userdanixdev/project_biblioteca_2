@@ -4,3 +4,4 @@ __pycache__/
 biblioteca.db
 .env
 project_biblioteca.db
+ambiente_virtual.txt
