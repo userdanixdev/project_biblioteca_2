@@ -14,7 +14,7 @@ class Emprestimo(Base):
     data_emprestimo = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     # Relacionamentos: A entidade se relaciona diretamente com 'item_emprestimo','funcionario','usuario':
-    funcionario = relationship("Funcionario", back_populates="emprestimo")
+    funcionario = relationship("Funcionario", back_populates="emprestimos")
     usuario = relationship("Usuario", back_populates="emprestimo")
     itens = relationship(
         "ItemEmprestimo",
