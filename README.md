@@ -154,7 +154,7 @@ project_biblioteca/
 
 Abra o terminal na pasta project_biblioteca_2 e rode:
 
-`python -m createdb`
+`python -m create_db`
 
 ## 👤 Autor do Projeto:
 
