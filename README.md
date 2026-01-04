@@ -52,9 +52,9 @@ Isso evita:
 ### 3. Estrutura de projeto profissional
 O projeto segue uma organização clara:
 
-- `src/` → código de domínio e persistência
-- `notebooks/` → modelagem e testes exploratórios
-- `requirements.txt` → dependências mínimas
+- `src/` → códigos de domínio e persistência do bando de dados
+- `notebooks/` → modelagem e testes exploratórios (módulo adicional)
+- `requirements.txt` → dependências utilizadas
 - `README.md` → documentação central
 
 Essa separação facilita:
