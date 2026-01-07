@@ -1,4 +1,5 @@
 # Pasta Models:
 
-Cada entidade em um arquivo
-Evita erros de redefinição no Jupyter.
+Cada entidade em um arquivo.
+
+### Para evitar erros de redefinição no Jupyter. Ex: Kernel
