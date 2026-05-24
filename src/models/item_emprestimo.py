@@ -12,7 +12,7 @@ class ItemEmprestimo(Base):
     # Relações: A entidade 'item_emprestimo' tem relação direta com as entidades 'livro' e 'empréstimo'
 
     emprestimo = relationship("Emprestimo", back_populates="itens")    
-    livros = relationship("Livro", back_populates="itens")
+    livro = relationship("Livro", back_populates="itens")
 
     __table_args__ = (UniqueConstraint(
         "id_emprestimo", "id_livro", name = "uq_item_emprestimo"),)

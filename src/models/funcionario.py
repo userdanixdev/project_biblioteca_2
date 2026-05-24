@@ -13,4 +13,4 @@ class Funcionario(Base):
 
     # Relacionamentos: A entidade 'funcionario' se relaciona com 'empréstimo' diretamente:
 
-    emprestimo =relationship ("Emprestimo", back_populates= "funcionario")
+    emprestimos =relationship ("Emprestimo", back_populates= "funcionario")

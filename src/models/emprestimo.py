@@ -15,7 +15,7 @@ class Emprestimo(Base):
 
     # Relacionamentos: A entidade se relaciona diretamente com 'item_emprestimo','funcionario','usuario':
     funcionario = relationship("Funcionario", back_populates="emprestimos")
-    usuario = relationship("Usuario", back_populates="emprestimo")
+    usuario = relationship("Usuario", back_populates="emprestimos")
     itens = relationship(
         "ItemEmprestimo",
         back_populates="emprestimo",
