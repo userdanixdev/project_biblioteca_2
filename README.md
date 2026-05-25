@@ -1,4 +1,10 @@
 # 📚 Projeto Biblioteca — Modelagem de Dados e ORM com SQLAlchemy
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57)
+![Pytest](https://img.shields.io/badge/Tests-Pytest-green)
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ## 📌 Visão Geral
 
@@ -107,12 +113,16 @@ O SQLite se mostra **mais apropriado que o DuckDB**.
 
 ## 🧠 Tecnologias Utilizadas
 
-- Python 3.11+
-- SQLAlchemy 
-- SQLite
-- Jupyter Notebook
-- Conda / Ambiente virtual
-- Git e GitHub
+## Tecnologias Utilizadas
+
+- **Python 3.11+**: linguagem principal do projeto
+- **SQLAlchemy ORM**: mapeamento objeto-relacional e manipulação das entidades
+- **SQLite**: banco de dados relacional utilizado no desenvolvimento local
+- **Pytest**: criação e execução dos testes automatizados
+- **Logging**: registro de eventos, validações e erros durante os testes
+- **Jupyter Notebook**: documentação exploratória e apoio à modelagem
+- **Conda / Ambiente virtual**: gerenciamento do ambiente de desenvolvimento
+- **Git e GitHub**: versionamento, branches, releases e pull requests
 
 ---
 
