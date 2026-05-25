@@ -1,0 +1,102 @@
+2026-05-24 17:10:19,250 [INFO] __main__ - Iniciando testes manuais de CRUD
+2026-05-24 17:10:19,251 [INFO] __main__ - Iniciando CRUD de Livro
+2026-05-24 17:10:19,291 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,297 [INFO] sqlalchemy.engine.Engine - INSERT INTO livro (titulo, editora, ano_publicacao, quantidade_estoque) VALUES (?, ?, ?, ?)
+2026-05-24 17:10:19,300 [INFO] sqlalchemy.engine.Engine - [generated in 0.00307s] ('Livro Teste Manual', 'Editora Teste', '2026-01-01', 5)
+2026-05-24 17:10:19,308 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,308 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,331 [INFO] sqlalchemy.engine.Engine - SELECT livro.id_livro, livro.titulo, livro.editora, livro.ano_publicacao, livro.quantidade_estoque 
+FROM livro 
+WHERE livro.id_livro = ?
+2026-05-24 17:10:19,333 [INFO] sqlalchemy.engine.Engine - [generated in 0.00279s] (1,)
+2026-05-24 17:10:19,336 [INFO] __main__ - Livro criado com ID: 1
+2026-05-24 17:10:19,341 [INFO] sqlalchemy.engine.Engine - SELECT livro.id_livro, livro.titulo, livro.editora, livro.ano_publicacao, livro.quantidade_estoque 
+FROM livro 
+WHERE livro.id_livro = ?
+2026-05-24 17:10:19,341 [INFO] sqlalchemy.engine.Engine - [generated in 0.00359s] (1,)
+2026-05-24 17:10:19,341 [INFO] __main__ - Livro encontrado: Livro Teste Manual
+2026-05-24 17:10:19,355 [INFO] sqlalchemy.engine.Engine - UPDATE livro SET quantidade_estoque=? WHERE livro.id_livro = ?
+2026-05-24 17:10:19,356 [INFO] sqlalchemy.engine.Engine - [generated in 0.00187s] (10, 1)
+2026-05-24 17:10:19,362 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,375 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,377 [INFO] sqlalchemy.engine.Engine - SELECT livro.id_livro, livro.titulo, livro.editora, livro.ano_publicacao, livro.quantidade_estoque 
+FROM livro 
+WHERE livro.id_livro = ?
+2026-05-24 17:10:19,381 [INFO] sqlalchemy.engine.Engine - [cached since 0.04992s ago] (1,)
+2026-05-24 17:10:19,389 [INFO] __main__ - Livro atualizado. Novo estoque: 10
+2026-05-24 17:10:19,394 [INFO] sqlalchemy.engine.Engine - SELECT item_emprestimo.id_emprestimo AS item_emprestimo_id_emprestimo, item_emprestimo.id_livro AS item_emprestimo_id_livro, item_emprestimo.data_prev_entrega AS item_emprestimo_data_prev_entrega, item_emprestimo.data_devolucao AS item_emprestimo_data_devolucao 
+FROM item_emprestimo 
+WHERE ? = item_emprestimo.id_livro
+2026-05-24 17:10:19,398 [INFO] sqlalchemy.engine.Engine - [generated in 0.00363s] (1,)
+2026-05-24 17:10:19,407 [INFO] sqlalchemy.engine.Engine - DELETE FROM livro WHERE livro.id_livro = ?
+2026-05-24 17:10:19,408 [INFO] sqlalchemy.engine.Engine - [generated in 0.00272s] (1,)
+2026-05-24 17:10:19,412 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,420 [INFO] __main__ - Livro removido com sucesso
+2026-05-24 17:10:19,423 [INFO] __main__ - Iniciando CRUD de Usuario
+2026-05-24 17:10:19,424 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,428 [INFO] sqlalchemy.engine.Engine - INSERT INTO usuario (nome, matricula, email, telefone, endereco) VALUES (?, ?, ?, ?, ?)
+2026-05-24 17:10:19,431 [INFO] sqlalchemy.engine.Engine - [generated in 0.00448s] ('Usuario Teste Manual', 'USRTEST001', 'usuario.teste@email.com', '11999990000', 'Rua Teste, 123')
+2026-05-24 17:10:19,442 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,449 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,463 [INFO] sqlalchemy.engine.Engine - SELECT usuario.id_usuario, usuario.nome, usuario.matricula, usuario.email, usuario.telefone, usuario.endereco 
+FROM usuario 
+WHERE usuario.id_usuario = ?
+2026-05-24 17:10:19,467 [INFO] sqlalchemy.engine.Engine - [generated in 0.00445s] (1,)
+2026-05-24 17:10:19,475 [INFO] __main__ - Usuario criado com ID: 1
+2026-05-24 17:10:19,480 [INFO] sqlalchemy.engine.Engine - SELECT usuario.id_usuario, usuario.nome, usuario.matricula, usuario.email, usuario.telefone, usuario.endereco 
+FROM usuario 
+WHERE usuario.id_usuario = ?
+2026-05-24 17:10:19,483 [INFO] sqlalchemy.engine.Engine - [generated in 0.00304s] (1,)
+2026-05-24 17:10:19,491 [INFO] __main__ - Usuario encontrado: Usuario Teste Manual
+2026-05-24 17:10:19,495 [INFO] sqlalchemy.engine.Engine - UPDATE usuario SET telefone=? WHERE usuario.id_usuario = ?
+2026-05-24 17:10:19,496 [INFO] sqlalchemy.engine.Engine - [generated in 0.00159s] ('11888880000', 1)
+2026-05-24 17:10:19,500 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,510 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,512 [INFO] sqlalchemy.engine.Engine - SELECT usuario.id_usuario, usuario.nome, usuario.matricula, usuario.email, usuario.telefone, usuario.endereco 
+FROM usuario 
+WHERE usuario.id_usuario = ?
+2026-05-24 17:10:19,516 [INFO] sqlalchemy.engine.Engine - [cached since 0.05204s ago] (1,)
+2026-05-24 17:10:19,516 [INFO] __main__ - Usuario atualizado. Novo telefone: 11888880000
+2026-05-24 17:10:19,527 [INFO] sqlalchemy.engine.Engine - SELECT emprestimo.id_emprestimo AS emprestimo_id_emprestimo, emprestimo.id_usuario AS emprestimo_id_usuario, emprestimo.id_funcionario AS emprestimo_id_funcionario, emprestimo.data_emprestimo AS emprestimo_data_emprestimo 
+FROM emprestimo 
+WHERE ? = emprestimo.id_usuario
+2026-05-24 17:10:19,532 [INFO] sqlalchemy.engine.Engine - [generated in 0.00464s] (1,)
+2026-05-24 17:10:19,595 [INFO] sqlalchemy.engine.Engine - DELETE FROM usuario WHERE usuario.id_usuario = ?
+2026-05-24 17:10:19,599 [INFO] sqlalchemy.engine.Engine - [generated in 0.00598s] (1,)
+2026-05-24 17:10:19,607 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,612 [INFO] __main__ - Usuario removido com sucesso
+2026-05-24 17:10:19,613 [INFO] __main__ - Iniciando CRUD de Funcionario
+2026-05-24 17:10:19,615 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,618 [INFO] sqlalchemy.engine.Engine - INSERT INTO funcionario (nome, cpf, telefone, email, cargo) VALUES (?, ?, ?, ?, ?)
+2026-05-24 17:10:19,625 [INFO] sqlalchemy.engine.Engine - [generated in 0.01003s] ('Funcionario Teste Manual', '12345678901', '11777770000', 'funcionario.teste@email.com', 'Atendente')
+2026-05-24 17:10:19,625 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,643 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,656 [INFO] sqlalchemy.engine.Engine - SELECT funcionario.id_funcionario, funcionario.nome, funcionario.cpf, funcionario.telefone, funcionario.email, funcionario.cargo 
+FROM funcionario 
+WHERE funcionario.id_funcionario = ?
+2026-05-24 17:10:19,659 [INFO] sqlalchemy.engine.Engine - [generated in 0.00313s] (1,)
+2026-05-24 17:10:19,662 [INFO] __main__ - Funcionario criado com ID: 1
+2026-05-24 17:10:19,665 [INFO] sqlalchemy.engine.Engine - SELECT funcionario.id_funcionario, funcionario.nome, funcionario.cpf, funcionario.telefone, funcionario.email, funcionario.cargo 
+FROM funcionario 
+WHERE funcionario.id_funcionario = ?
+2026-05-24 17:10:19,676 [INFO] sqlalchemy.engine.Engine - [generated in 0.01047s] (1,)
+2026-05-24 17:10:19,679 [INFO] __main__ - Funcionario encontrado: Funcionario Teste Manual
+2026-05-24 17:10:19,682 [INFO] sqlalchemy.engine.Engine - UPDATE funcionario SET cargo=? WHERE funcionario.id_funcionario = ?
+2026-05-24 17:10:19,684 [INFO] sqlalchemy.engine.Engine - [generated in 0.00166s] ('Bibliotecario', 1)
+2026-05-24 17:10:19,693 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,705 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:10:19,710 [INFO] sqlalchemy.engine.Engine - SELECT funcionario.id_funcionario, funcionario.nome, funcionario.cpf, funcionario.telefone, funcionario.email, funcionario.cargo 
+FROM funcionario 
+WHERE funcionario.id_funcionario = ?
+2026-05-24 17:10:19,715 [INFO] sqlalchemy.engine.Engine - [cached since 0.05814s ago] (1,)
+2026-05-24 17:10:19,716 [INFO] __main__ - Funcionario atualizado. Novo cargo: Bibliotecario
+2026-05-24 17:10:19,722 [INFO] sqlalchemy.engine.Engine - SELECT emprestimo.id_emprestimo AS emprestimo_id_emprestimo, emprestimo.id_usuario AS emprestimo_id_usuario, emprestimo.id_funcionario AS emprestimo_id_funcionario, emprestimo.data_emprestimo AS emprestimo_data_emprestimo 
+FROM emprestimo 
+WHERE ? = emprestimo.id_funcionario
+2026-05-24 17:10:19,725 [INFO] sqlalchemy.engine.Engine - [generated in 0.00347s] (1,)
+2026-05-24 17:10:19,731 [INFO] sqlalchemy.engine.Engine - DELETE FROM funcionario WHERE funcionario.id_funcionario = ?
+2026-05-24 17:10:19,731 [INFO] sqlalchemy.engine.Engine - [generated in 0.00481s] (1,)
+2026-05-24 17:10:19,742 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:10:19,748 [INFO] __main__ - Funcionario removido com sucesso
+2026-05-24 17:10:19,748 [INFO] __main__ - Todos os testes manuais de CRUD finalizaram com sucesso
+2026-05-24 17:10:19,750 [INFO] __main__ - Sessao encerrada

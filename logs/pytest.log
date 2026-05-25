@@ -1,0 +1,24 @@
+2026-05-24 23:04:07 [INFO] test_crud_models - Validando mapeamento ORM
+2026-05-24 23:04:07 [INFO] conftest - Criando banco SQLite em memoria para teste
+2026-05-24 23:04:07 [INFO] test_crud_models - Validando tabelas criadas
+2026-05-24 23:04:07 [INFO] conftest - Banco SQLite em memoria removido
+2026-05-24 23:04:07 [INFO] conftest - Criando banco SQLite em memoria para teste
+2026-05-24 23:04:07 [INFO] conftest - Sessao de teste aberta
+2026-05-24 23:04:07 [INFO] test_crud_models - Testando CRUD de Livro
+2026-05-24 23:04:07 [INFO] conftest - Sessao de teste fechada
+2026-05-24 23:04:07 [INFO] conftest - Banco SQLite em memoria removido
+2026-05-24 23:04:07 [INFO] conftest - Criando banco SQLite em memoria para teste
+2026-05-24 23:04:07 [INFO] conftest - Sessao de teste aberta
+2026-05-24 23:04:07 [INFO] test_crud_models - Testando CRUD de Usuario
+2026-05-24 23:04:07 [INFO] conftest - Sessao de teste fechada
+2026-05-24 23:04:07 [INFO] conftest - Banco SQLite em memoria removido
+2026-05-24 23:04:07 [INFO] conftest - Criando banco SQLite em memoria para teste
+2026-05-24 23:04:07 [INFO] conftest - Sessao de teste aberta
+2026-05-24 23:04:07 [INFO] test_crud_models - Testando CRUD de Funcionario
+2026-05-24 23:04:07 [INFO] conftest - Sessao de teste fechada
+2026-05-24 23:04:07 [INFO] conftest - Banco SQLite em memoria removido
+2026-05-24 23:04:07 [INFO] conftest - Criando banco SQLite em memoria para teste
+2026-05-24 23:04:07 [INFO] conftest - Sessao de teste aberta
+2026-05-24 23:04:07 [INFO] test_crud_models - Testando Emprestimo com ItemEmprestimo
+2026-05-24 23:04:08 [INFO] conftest - Sessao de teste fechada
+2026-05-24 23:04:08 [INFO] conftest - Banco SQLite em memoria removido

@@ -1,0 +1,134 @@
+2026-05-24 17:12:39,823 [INFO] __main__ - Iniciando teste manual de Emprestimo
+2026-05-24 17:12:39,824 [INFO] __main__ - Iniciando CRUD de Emprestimo com ItemEmprestimo
+2026-05-24 17:12:39,824 [INFO] __main__ - Criando dados base para emprestimo
+2026-05-24 17:12:39,871 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:12:39,880 [INFO] sqlalchemy.engine.Engine - INSERT INTO funcionario (nome, cpf, telefone, email, cargo) VALUES (?, ?, ?, ?, ?)
+2026-05-24 17:12:39,882 [INFO] sqlalchemy.engine.Engine - [generated in 0.00269s] ('Funcionario Emprestimo Teste', '22233344455', '11922220000', 'funcionario.emprestimo@email.com', 'Atendente')
+2026-05-24 17:12:39,892 [INFO] sqlalchemy.engine.Engine - INSERT INTO livro (titulo, editora, ano_publicacao, quantidade_estoque) VALUES (?, ?, ?, ?)
+2026-05-24 17:12:39,896 [INFO] sqlalchemy.engine.Engine - [generated in 0.00713s] ('Livro Emprestimo Teste', 'Editora Emprestimo', '2026-01-01', 3)
+2026-05-24 17:12:39,896 [INFO] sqlalchemy.engine.Engine - INSERT INTO usuario (nome, matricula, email, telefone, endereco) VALUES (?, ?, ?, ?, ?)
+2026-05-24 17:12:39,896 [INFO] sqlalchemy.engine.Engine - [generated in 0.00220s] ('Usuario Emprestimo Teste', 'USRTESTEMP', 'usuario.emprestimo@email.com', '11911110000', 'Rua Emprestimo, 100')
+2026-05-24 17:12:39,916 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:12:39,941 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:12:39,947 [INFO] sqlalchemy.engine.Engine - SELECT usuario.id_usuario, usuario.nome, usuario.matricula, usuario.email, usuario.telefone, usuario.endereco 
+FROM usuario 
+WHERE usuario.id_usuario = ?
+2026-05-24 17:12:39,947 [INFO] sqlalchemy.engine.Engine - [generated in 0.00357s] (1,)
+2026-05-24 17:12:39,967 [INFO] sqlalchemy.engine.Engine - SELECT funcionario.id_funcionario, funcionario.nome, funcionario.cpf, funcionario.telefone, funcionario.email, funcionario.cargo 
+FROM funcionario 
+WHERE funcionario.id_funcionario = ?
+2026-05-24 17:12:39,970 [INFO] sqlalchemy.engine.Engine - [generated in 0.00296s] (1,)
+2026-05-24 17:12:39,982 [INFO] sqlalchemy.engine.Engine - SELECT livro.id_livro, livro.titulo, livro.editora, livro.ano_publicacao, livro.quantidade_estoque 
+FROM livro 
+WHERE livro.id_livro = ?
+2026-05-24 17:12:39,987 [INFO] sqlalchemy.engine.Engine - [generated in 0.00537s] (1,)
+2026-05-24 17:12:39,990 [INFO] __main__ - Usuario criado com ID: 1
+2026-05-24 17:12:39,991 [INFO] __main__ - Funcionario criado com ID: 1
+2026-05-24 17:12:39,994 [INFO] __main__ - Livro criado com ID: 1
+2026-05-24 17:12:40,014 [INFO] sqlalchemy.engine.Engine - INSERT INTO emprestimo (id_usuario, id_funcionario, data_emprestimo) VALUES (?, ?, ?)
+2026-05-24 17:12:40,015 [INFO] sqlalchemy.engine.Engine - [generated in 0.00253s] (1, 1, '2026-05-24 20:12:40.013852')
+2026-05-24 17:12:40,022 [INFO] sqlalchemy.engine.Engine - INSERT INTO item_emprestimo (id_emprestimo, id_livro, data_prev_entrega, data_devolucao) VALUES (?, ?, ?, ?)
+2026-05-24 17:12:40,025 [INFO] sqlalchemy.engine.Engine - [generated in 0.00264s] (1, 1, '2026-05-31 20:12:39.996499', '2026-06-03 20:12:39.996499')
+2026-05-24 17:12:40,034 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:12:40,039 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:12:40,051 [INFO] sqlalchemy.engine.Engine - SELECT emprestimo.id_emprestimo, emprestimo.id_usuario, emprestimo.id_funcionario, emprestimo.data_emprestimo 
+FROM emprestimo 
+WHERE emprestimo.id_emprestimo = ?
+2026-05-24 17:12:40,054 [INFO] sqlalchemy.engine.Engine - [generated in 0.00332s] (1,)
+2026-05-24 17:12:40,057 [INFO] __main__ - Emprestimo criado com ID: 1
+2026-05-24 17:12:40,062 [INFO] sqlalchemy.engine.Engine - SELECT emprestimo.id_emprestimo, emprestimo.id_usuario, emprestimo.id_funcionario, emprestimo.data_emprestimo 
+FROM emprestimo 
+WHERE emprestimo.id_emprestimo = ?
+2026-05-24 17:12:40,064 [INFO] sqlalchemy.engine.Engine - [generated in 0.01027s] (1,)
+2026-05-24 17:12:40,064 [INFO] __main__ - Emprestimo encontrado com ID: 1
+2026-05-24 17:12:40,130 [INFO] sqlalchemy.engine.Engine - SELECT usuario.id_usuario AS usuario_id_usuario, usuario.nome AS usuario_nome, usuario.matricula AS usuario_matricula, usuario.email AS usuario_email, usuario.telefone AS usuario_telefone, usuario.endereco AS usuario_endereco 
+FROM usuario 
+WHERE usuario.id_usuario = ?
+2026-05-24 17:12:40,148 [INFO] sqlalchemy.engine.Engine - [generated in 0.00854s] (1,)
+2026-05-24 17:12:40,151 [INFO] __main__ - Usuario do emprestimo: Usuario Emprestimo Teste
+2026-05-24 17:12:40,157 [INFO] sqlalchemy.engine.Engine - SELECT funcionario.id_funcionario AS funcionario_id_funcionario, funcionario.nome AS funcionario_nome, funcionario.cpf AS funcionario_cpf, funcionario.telefone AS funcionario_telefone, funcionario.email AS funcionario_email, funcionario.cargo AS funcionario_cargo 
+FROM funcionario 
+WHERE funcionario.id_funcionario = ?
+2026-05-24 17:12:40,168 [INFO] sqlalchemy.engine.Engine - [generated in 0.01225s] (1,)
+2026-05-24 17:12:40,169 [INFO] __main__ - Funcionario do emprestimo: Funcionario Emprestimo Teste
+2026-05-24 17:12:40,180 [INFO] sqlalchemy.engine.Engine - SELECT item_emprestimo.id_emprestimo AS item_emprestimo_id_emprestimo, item_emprestimo.id_livro AS item_emprestimo_id_livro, item_emprestimo.data_prev_entrega AS item_emprestimo_data_prev_entrega, item_emprestimo.data_devolucao AS item_emprestimo_data_devolucao 
+FROM item_emprestimo 
+WHERE ? = item_emprestimo.id_emprestimo
+2026-05-24 17:12:40,184 [INFO] sqlalchemy.engine.Engine - [generated in 0.00364s] (1,)
+2026-05-24 17:12:40,188 [INFO] __main__ - Quantidade de itens: 1
+2026-05-24 17:12:40,201 [INFO] sqlalchemy.engine.Engine - SELECT livro.id_livro AS livro_id_livro, livro.titulo AS livro_titulo, livro.editora AS livro_editora, livro.ano_publicacao AS livro_ano_publicacao, livro.quantidade_estoque AS livro_quantidade_estoque 
+FROM livro 
+WHERE livro.id_livro = ?
+2026-05-24 17:12:40,205 [INFO] sqlalchemy.engine.Engine - [generated in 0.00461s] (1,)
+2026-05-24 17:12:40,208 [INFO] __main__ - Livro emprestado: Livro Emprestimo Teste
+2026-05-24 17:12:40,214 [INFO] sqlalchemy.engine.Engine - UPDATE item_emprestimo SET data_devolucao=? WHERE item_emprestimo.id_emprestimo = ? AND item_emprestimo.id_livro = ?
+2026-05-24 17:12:40,220 [INFO] sqlalchemy.engine.Engine - [generated in 0.00692s] ('2026-05-24 20:12:40.208132', 1, 1)
+2026-05-24 17:12:40,242 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:12:40,278 [INFO] __main__ - ItemEmprestimo atualizado com data de devolucao
+2026-05-24 17:12:40,278 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:12:40,278 [INFO] sqlalchemy.engine.Engine - SELECT emprestimo.id_emprestimo AS emprestimo_id_emprestimo, emprestimo.id_usuario AS emprestimo_id_usuario, emprestimo.id_funcionario AS emprestimo_id_funcionario, emprestimo.data_emprestimo AS emprestimo_data_emprestimo 
+FROM emprestimo 
+WHERE emprestimo.id_emprestimo = ?
+2026-05-24 17:12:40,298 [INFO] sqlalchemy.engine.Engine - [generated in 0.00679s] (1,)
+2026-05-24 17:12:40,302 [INFO] sqlalchemy.engine.Engine - SELECT livro.id_livro AS livro_id_livro, livro.titulo AS livro_titulo, livro.editora AS livro_editora, livro.ano_publicacao AS livro_ano_publicacao, livro.quantidade_estoque AS livro_quantidade_estoque 
+FROM livro 
+WHERE livro.id_livro = ?
+2026-05-24 17:12:40,306 [INFO] sqlalchemy.engine.Engine - [cached since 0.1058s ago] (1,)
+2026-05-24 17:12:40,309 [INFO] sqlalchemy.engine.Engine - SELECT usuario.id_usuario AS usuario_id_usuario, usuario.nome AS usuario_nome, usuario.matricula AS usuario_matricula, usuario.email AS usuario_email, usuario.telefone AS usuario_telefone, usuario.endereco AS usuario_endereco 
+FROM usuario 
+WHERE usuario.id_usuario = ?
+2026-05-24 17:12:40,315 [INFO] sqlalchemy.engine.Engine - [cached since 0.1756s ago] (1,)
+2026-05-24 17:12:40,318 [INFO] sqlalchemy.engine.Engine - SELECT funcionario.id_funcionario AS funcionario_id_funcionario, funcionario.nome AS funcionario_nome, funcionario.cpf AS funcionario_cpf, funcionario.telefone AS funcionario_telefone, funcionario.email AS funcionario_email, funcionario.cargo AS funcionario_cargo 
+FROM funcionario 
+WHERE funcionario.id_funcionario = ?
+2026-05-24 17:12:40,322 [INFO] sqlalchemy.engine.Engine - [cached since 0.1666s ago] (1,)
+2026-05-24 17:12:40,325 [INFO] sqlalchemy.engine.Engine - SELECT item_emprestimo.id_emprestimo AS item_emprestimo_id_emprestimo, item_emprestimo.id_livro AS item_emprestimo_id_livro, item_emprestimo.data_prev_entrega AS item_emprestimo_data_prev_entrega, item_emprestimo.data_devolucao AS item_emprestimo_data_devolucao 
+FROM item_emprestimo 
+WHERE ? = item_emprestimo.id_emprestimo
+2026-05-24 17:12:40,329 [INFO] sqlalchemy.engine.Engine - [cached since 0.1529s ago] (1,)
+2026-05-24 17:12:40,329 [INFO] sqlalchemy.engine.Engine - DELETE FROM item_emprestimo WHERE item_emprestimo.id_emprestimo = ? AND item_emprestimo.id_livro = ?
+2026-05-24 17:12:40,329 [INFO] sqlalchemy.engine.Engine - [generated in 0.00310s] (1, 1)
+2026-05-24 17:12:40,357 [INFO] sqlalchemy.engine.Engine - DELETE FROM emprestimo WHERE emprestimo.id_emprestimo = ?
+2026-05-24 17:12:40,359 [INFO] sqlalchemy.engine.Engine - [generated in 0.00164s] (1,)
+2026-05-24 17:12:40,361 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:12:40,403 [INFO] __main__ - Emprestimo removido com sucesso
+2026-05-24 17:12:40,405 [INFO] sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-05-24 17:12:40,409 [INFO] sqlalchemy.engine.Engine - SELECT item_emprestimo.id_emprestimo AS item_emprestimo_id_emprestimo, item_emprestimo.id_livro AS item_emprestimo_id_livro, item_emprestimo.data_prev_entrega AS item_emprestimo_data_prev_entrega, item_emprestimo.data_devolucao AS item_emprestimo_data_devolucao 
+FROM item_emprestimo 
+WHERE item_emprestimo.id_emprestimo = ? AND item_emprestimo.id_livro = ?
+2026-05-24 17:12:40,416 [INFO] sqlalchemy.engine.Engine - [generated in 0.00674s] (1, 1)
+2026-05-24 17:12:40,418 [INFO] __main__ - ItemEmprestimo removido automaticamente pelo cascade
+2026-05-24 17:12:40,420 [INFO] sqlalchemy.engine.Engine - SELECT usuario.id_usuario AS usuario_id_usuario, usuario.nome AS usuario_nome, usuario.matricula AS usuario_matricula, usuario.email AS usuario_email, usuario.telefone AS usuario_telefone, usuario.endereco AS usuario_endereco 
+FROM usuario 
+WHERE usuario.id_usuario = ?
+2026-05-24 17:12:40,424 [INFO] sqlalchemy.engine.Engine - [cached since 0.2857s ago] (1,)
+2026-05-24 17:12:40,429 [INFO] sqlalchemy.engine.Engine - SELECT funcionario.id_funcionario AS funcionario_id_funcionario, funcionario.nome AS funcionario_nome, funcionario.cpf AS funcionario_cpf, funcionario.telefone AS funcionario_telefone, funcionario.email AS funcionario_email, funcionario.cargo AS funcionario_cargo 
+FROM funcionario 
+WHERE funcionario.id_funcionario = ?
+2026-05-24 17:12:40,433 [INFO] sqlalchemy.engine.Engine - [cached since 0.2778s ago] (1,)
+2026-05-24 17:12:40,434 [INFO] sqlalchemy.engine.Engine - SELECT livro.id_livro AS livro_id_livro, livro.titulo AS livro_titulo, livro.editora AS livro_editora, livro.ano_publicacao AS livro_ano_publicacao, livro.quantidade_estoque AS livro_quantidade_estoque 
+FROM livro 
+WHERE livro.id_livro = ?
+2026-05-24 17:12:40,434 [INFO] sqlalchemy.engine.Engine - [cached since 0.2391s ago] (1,)
+2026-05-24 17:12:40,445 [INFO] sqlalchemy.engine.Engine - SELECT item_emprestimo.id_emprestimo AS item_emprestimo_id_emprestimo, item_emprestimo.id_livro AS item_emprestimo_id_livro, item_emprestimo.data_prev_entrega AS item_emprestimo_data_prev_entrega, item_emprestimo.data_devolucao AS item_emprestimo_data_devolucao 
+FROM item_emprestimo 
+WHERE ? = item_emprestimo.id_livro
+2026-05-24 17:12:40,445 [INFO] sqlalchemy.engine.Engine - [generated in 0.00302s] (1,)
+2026-05-24 17:12:40,445 [INFO] sqlalchemy.engine.Engine - SELECT emprestimo.id_emprestimo AS emprestimo_id_emprestimo, emprestimo.id_usuario AS emprestimo_id_usuario, emprestimo.id_funcionario AS emprestimo_id_funcionario, emprestimo.data_emprestimo AS emprestimo_data_emprestimo 
+FROM emprestimo 
+WHERE ? = emprestimo.id_usuario
+2026-05-24 17:12:40,445 [INFO] sqlalchemy.engine.Engine - [generated in 0.00336s] (1,)
+2026-05-24 17:12:40,472 [INFO] sqlalchemy.engine.Engine - SELECT emprestimo.id_emprestimo AS emprestimo_id_emprestimo, emprestimo.id_usuario AS emprestimo_id_usuario, emprestimo.id_funcionario AS emprestimo_id_funcionario, emprestimo.data_emprestimo AS emprestimo_data_emprestimo 
+FROM emprestimo 
+WHERE ? = emprestimo.id_funcionario
+2026-05-24 17:12:40,479 [INFO] sqlalchemy.engine.Engine - [generated in 0.01282s] (1,)
+2026-05-24 17:12:40,479 [INFO] sqlalchemy.engine.Engine - DELETE FROM funcionario WHERE funcionario.id_funcionario = ?
+2026-05-24 17:12:40,479 [INFO] sqlalchemy.engine.Engine - [generated in 0.00179s] (1,)
+2026-05-24 17:12:40,495 [INFO] sqlalchemy.engine.Engine - DELETE FROM livro WHERE livro.id_livro = ?
+2026-05-24 17:12:40,495 [INFO] sqlalchemy.engine.Engine - [generated in 0.00224s] (1,)
+2026-05-24 17:12:40,509 [INFO] sqlalchemy.engine.Engine - DELETE FROM usuario WHERE usuario.id_usuario = ?
+2026-05-24 17:12:40,510 [INFO] sqlalchemy.engine.Engine - [generated in 0.00143s] (1,)
+2026-05-24 17:12:40,512 [INFO] sqlalchemy.engine.Engine - COMMIT
+2026-05-24 17:12:40,529 [INFO] __main__ - Dados base removidos com sucesso
+2026-05-24 17:12:40,532 [INFO] __main__ - Teste manual de Emprestimo finalizado com sucesso
+2026-05-24 17:12:40,533 [INFO] __main__ - Sessao encerrada
