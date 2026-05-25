@@ -154,7 +154,130 @@ project_biblioteca/
 
 Abra o terminal na pasta project_biblioteca_2 e rode:
 
-`python -m create_db`
+`python -m src.create_db`
+---
+
+## Evolução Atual do Projeto
+
+Nesta etapa, o projeto evoluiu da modelagem ORM inicial para uma fase de validação prática da camada de dados.
+
+Foram adicionados testes manuais, testes automatizados e logs de execução para garantir que os models, relacionamentos e operações CRUD estejam funcionando corretamente antes da criação da API.
+
+### Banco Oficial
+
+O banco adotado como base oficial do projeto é:
+
+```text
+project_biblioteca.db
+```
+
+A conexão principal está centralizada em:
+
+```
+src/database/connection.py
+```
+
+### Testes e Logs:
+
+O projeto agora conta com duas categorias de testes:
+
+```
+tests/
+├── manuais/
+│   ├── test_conexao.py
+│   ├── crud_test.py
+│   └── crud_emprestimo_test.py
+│
+└── automatizados/
+    ├── conftest.py
+    └── test_crud_models.py
+```
+
+### Testes Manuais:
+
+Os testes manuais validam diretamente o banco oficial ```project_biblioteca.db.```
+
+Eles foram usados para confirmar:
+
+- conexão com o banco;
+- CRUD de Livro;
+- CRUD de Usuario;
+- CRUD de Funcionario;
+- criação de Emprestimo com ItemEmprestimo;
+- funcionamento dos logs.
+- Testes Automatizados
+
+> Os testes automatizados utilizam pytest e banco SQLite em memória.
+
+Isso permite validar os models sem alterar o banco oficial do projeto.
+
+### Os testes automatizados cobrem:
+
+- configuração dos mapeamentos ORM;
+- criação das tabelas esperadas;
+- CRUD de Livro;
+- CRUD de Usuario;
+- CRUD de Funcionario;
+- criação de Emprestimo com ItemEmprestimo;
+- validação dos relacionamentos principais.
+- Executando os Testes
+
+> Para rodar os testes automatizados:
+
+```pytest```
+
+ - Para saída mais detalhada:
+
+```pytest -v```
+
+> Os logs dos testes podem ser exibidos no terminal e salvos em arquivo conforme configuração do pytest.ini.
+
+### Status da Camada ORM:
+
+Nesta versão, a camada ORM foi validada com sucesso para as principais entidades do sistema:
+
+```
+Usuario
+Aluno
+Professor
+Funcionario
+Livro
+Emprestimo
+ItemEmprestimo
+```
+
+> Também foram validados os principais relacionamentos:
+
+- usuário possui empréstimos;
+- funcionário registra empréstimos;
+- empréstimo possui itens;
+- item de empréstimo referencia um livro.
+
+### Próximos Passos:
+
+A próxima etapa do projeto será a criação de uma API para expor as funcionalidades principais do sistema.
+
+A API deve começar pelos endpoints de Livro:
+
+```
+GET    /livros
+POST   /livros
+GET    /livros/{id_livro}
+PUT    /livros/{id_livro}
+DELETE /livros/{id_livro}
+```
+Depois disso, a API será expandida para:
+
+```
+usuários;
+funcionários;
+empréstimos;
+itens de empréstimo.
+```
+
+### Para verificar a versão atual do projeto:
+
+https://github.com/userdanixdev/project_biblioteca_2/releases/tag/v0.1.0-testes
 
 ## 👤 Autor do Projeto:
 
