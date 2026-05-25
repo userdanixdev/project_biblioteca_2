@@ -1,7 +1,41 @@
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+logs/
+*.log
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Conda
+.conda/
+*.conda
+
+# Jupyter
 .ipynb_checkpoints/
-biblioteca.db
+
+# Banco SQLite local
+*.db
+*.sqlite
+*.sqlite3
+
+# Arquivos temporarios do sistema/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Variaveis de ambiente
 .env
-project_biblioteca.db
-ambiente_virtual.txt
+.env.*

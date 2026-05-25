@@ -34,6 +34,11 @@ Observação:
     dados no banco. Seu papel é verificar se a aplicação consegue enxergar
     corretamente a estrutura já criada.
 """
+from pathlib import Path
+import sys
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+sys.path.append(str(ROOT_DIR))
 
 from sqlalchemy import text
 from src.database.connection import engine
