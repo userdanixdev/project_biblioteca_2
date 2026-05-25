@@ -164,7 +164,8 @@ project_biblioteca/
 
 Abra o terminal na pasta project_biblioteca_2 e rode:
 
-`python -m src.create_db`
+```python -m src.create_db``` 
+
 ---
 
 ## Evolução Atual do Projeto
