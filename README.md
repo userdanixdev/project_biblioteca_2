@@ -168,6 +168,24 @@ Abra o terminal na pasta project_biblioteca_2 e rode:
 
 ---
 
+---
+
+## Diagramas do Projeto
+
+A modelagem do sistema foi documentada por meio de diagramas conceitual e lógico, representando as principais entidades, atributos e relacionamentos do domínio de biblioteca.
+
+### Modelo Conceitual — Peter Chen
+
+O modelo conceitual apresenta a visão de alto nível do domínio, destacando as entidades principais e seus relacionamentos.
+
+![Modelo Conceitual - Peter Chen](src/docs/model_data_concept_peter_chen.png)
+
+### Modelo Lógico — James Martin
+
+O modelo lógico detalha a estrutura relacional do sistema, aproximando a modelagem da implementação física no banco de dados.
+
+![Modelo Lógico - James Martin](src/docs/model_data_logic_james_martin.png)
+
 ## Evolução Atual do Projeto
 
 Nesta etapa, o projeto evoluiu da modelagem ORM inicial para uma fase de validação prática da camada de dados.
@@ -256,6 +274,8 @@ Livro
 Emprestimo
 ItemEmprestimo
 ```
+
+
 
 > Também foram validados os principais relacionamentos:
 

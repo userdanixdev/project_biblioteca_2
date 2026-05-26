@@ -51,3 +51,5 @@ print("Conexao OK")
 print("Tabelas encontradas:")
 for table in tables:
     print("-", table[0])
+
+    
