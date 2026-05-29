@@ -244,13 +244,7 @@ project_biblioteca_2/
 └── README.md
 ```
 
-## Execução:
-
-Abra o terminal na pasta project_biblioteca_2 e rode:
-
-`python -m create_db`
-
-### Testes:
+## Testes:
 
 O projeto possui testes manuais e automatizados.
 
