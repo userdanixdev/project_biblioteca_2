@@ -22,8 +22,6 @@ O sistema contempla entidades como usuários, alunos, professores, livros, empr�
 
 ## 🎯 Objetivos do Projeto
 
-## Objetivos do Projeto
-
 - Aplicar conceitos de modelagem conceitual, lógica e física;
 - Implementar ORM com SQLAlchemy;
 - Representar herança, generalização e especialização;
