@@ -1,10 +1,4 @@
 # 📚 Projeto Biblioteca — Modelagem de Dados e ORM com SQLAlchemy
-![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
-![SQLite](https://img.shields.io/badge/Database-SQLite-003B57)
-![Pytest](https://img.shields.io/badge/Tests-Pytest-green)
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ## 📌 Visão Geral
 
@@ -113,16 +107,12 @@ O SQLite se mostra **mais apropriado que o DuckDB**.
 
 ## 🧠 Tecnologias Utilizadas
 
-## Tecnologias Utilizadas
-
-- **Python 3.11+**: linguagem principal do projeto
-- **SQLAlchemy ORM**: mapeamento objeto-relacional e manipulação das entidades
-- **SQLite**: banco de dados relacional utilizado no desenvolvimento local
-- **Pytest**: criação e execução dos testes automatizados
-- **Logging**: registro de eventos, validações e erros durante os testes
-- **Jupyter Notebook**: documentação exploratória e apoio à modelagem
-- **Conda / Ambiente virtual**: gerenciamento do ambiente de desenvolvimento
-- **Git e GitHub**: versionamento, branches, releases e pull requests
+- Python 3.11+
+- SQLAlchemy 
+- SQLite
+- Jupyter Notebook
+- Conda / Ambiente virtual
+- Git e GitHub
 
 ---
 
@@ -160,159 +150,55 @@ project_biblioteca/
 ├── requirements.txt
 └── README.md
 ```
+## 📂📂 Estrutura atual do Projeto:
+
+project_biblioteca_2/
+│
+├── notebooks/
+│   ├── 01_biblioteca.ipynb
+│   ├── 02_modelagens.ipynb
+│   └── 03_testes_ORM.ipynb
+│
+├── src/
+│   ├── database/
+│   │   ├── base.py
+│   │   └── connection.py
+│   │
+│   ├── models/
+│   │   ├── usuario.py
+│   │   ├── livro.py
+│   │   ├── funcionario.py
+│   │   ├── emprestimo.py
+│   │   └── item_emprestimo.py
+│   │
+│   ├── app.py
+│   ├── config.py
+│   ├── extensions.py
+│   └── create_db.py
+│
+├── tests/
+│   ├── manuais/
+│   └── automatizados/
+│
+├── migrations/
+├── logs/
+├── wsgi.py
+├── pytest.ini
+├── requirements.txt
+├── LICENSE
+└── README.md
+
 ## Execução:
 
 Abra o terminal na pasta project_biblioteca_2 e rode:
 
-```python -m src.create_db``` 
-
----
-
----
-
-## Diagramas do Projeto
-
-A modelagem do sistema foi documentada por meio de diagramas conceitual e lógico, representando as principais entidades, atributos e relacionamentos do domínio de biblioteca.
-
-### Modelo Conceitual — Peter Chen
-
-O modelo conceitual apresenta a visão de alto nível do domínio, destacando as entidades principais e seus relacionamentos.
-
-![Modelo Conceitual - Peter Chen](src/docs/model_data_concept_peter_chen.png)
-
-### Modelo Lógico — James Martin
-
-O modelo lógico detalha a estrutura relacional do sistema, aproximando a modelagem da implementação física no banco de dados.
-
-![Modelo Lógico - James Martin](src/docs/model_data_logic_james_martin.png)
-
-## Evolução Atual do Projeto
-
-Nesta etapa, o projeto evoluiu da modelagem ORM inicial para uma fase de validação prática da camada de dados.
-
-Foram adicionados testes manuais, testes automatizados e logs de execução para garantir que os models, relacionamentos e operações CRUD estejam funcionando corretamente antes da criação da API.
-
-### Banco Oficial
-
-O banco adotado como base oficial do projeto é:
-
-```text
-project_biblioteca.db
-```
-
-A conexão principal está centralizada em:
-
-```
-src/database/connection.py
-```
-
-### Testes e Logs:
-
-O projeto agora conta com duas categorias de testes:
-
-```
-tests/
-├── manuais/
-│   ├── test_conexao.py
-│   ├── crud_test.py
-│   └── crud_emprestimo_test.py
-│
-└── automatizados/
-    ├── conftest.py
-    └── test_crud_models.py
-```
-
-### Testes Manuais:
-
-Os testes manuais validam diretamente o banco oficial ```project_biblioteca.db.```
-
-Eles foram usados para confirmar:
-
-- conexão com o banco;
-- CRUD de Livro;
-- CRUD de Usuario;
-- CRUD de Funcionario;
-- criação de Emprestimo com ItemEmprestimo;
-- funcionamento dos logs.
-- Testes Automatizados
-
-> Os testes automatizados utilizam pytest e banco SQLite em memória.
-
-Isso permite validar os models sem alterar o banco oficial do projeto.
-
-### Os testes automatizados cobrem:
-
-- configuração dos mapeamentos ORM;
-- criação das tabelas esperadas;
-- CRUD de Livro;
-- CRUD de Usuario;
-- CRUD de Funcionario;
-- criação de Emprestimo com ItemEmprestimo;
-- validação dos relacionamentos principais.
-- Executando os Testes
-
-> Para rodar os testes automatizados:
-
-```pytest```
-
- - Para saída mais detalhada:
-
-```pytest -v```
-
-> Os logs dos testes podem ser exibidos no terminal e salvos em arquivo conforme configuração do pytest.ini.
-
-### Status da Camada ORM:
-
-Nesta versão, a camada ORM foi validada com sucesso para as principais entidades do sistema:
-
-```
-Usuario
-Aluno
-Professor
-Funcionario
-Livro
-Emprestimo
-ItemEmprestimo
-```
-
-> Também foram validados os principais relacionamentos:
-
-- usuário possui empréstimos;
-- funcionário registra empréstimos;
-- empréstimo possui itens;
-- item de empréstimo referencia um livro.
-
-### Próximos Passos:
-
-A próxima etapa do projeto será a criação de uma API para expor as funcionalidades principais do sistema.
-
-A API deve começar pelos endpoints de Livro:
-
-```
-GET    /livros
-POST   /livros
-GET    /livros/{id_livro}
-PUT    /livros/{id_livro}
-DELETE /livros/{id_livro}
-```
-Depois disso, a API será expandida para:
-
-```
-usuários;
-funcionários;
-empréstimos;
-itens de empréstimo.
-```
-
-### Para verificar a versão atual do projeto:
-
-https://github.com/userdanixdev/project_biblioteca_2/releases/tag/v0.1.0-testes
+`python -m create_db`
 
 ## 👤 Autor do Projeto:
 
 **Daniel Martins França**
 
-Projeto desenvolvido com foco em modelagem de dados, bancos de dados relacionais e integração com Python, aplicando boas práticas desde a fase conceitual até a implementação utilizando ORM.
+*Projeto desenvolvido com foco em modelagem de dados, bancos de dados relacionais, ORM, testes e evolução para aplicações web.*
 
 ## 📬 Contato:
 
