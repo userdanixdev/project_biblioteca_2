@@ -151,6 +151,8 @@ O projeto evoluiu em etapas:
 
 ---
 
+![Fluxo Flask-SQLAlchemy e Flask-Migrate](src/docs/flask_migrate_flow.png)
+
 ## Execução:
 
 Abra o terminal na pasta project_biblioteca_2 e rode:
