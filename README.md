@@ -5,25 +5,33 @@
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
 ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57)
 ![Pytest](https://img.shields.io/badge/Tests-Pytest-green)
+![Flask](https://img.shields.io/badge/Flask-API%20Base-black)
+![Alembic](https://img.shields.io/badge/Migrations-Alembic-orange)
 ![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ## 📌 Visão Geral
 
-Este projeto tem como objetivo a **modelagem e implementação de um sistema de biblioteca** utilizando **Python**, **SQLAlchemy ORM** e **banco de dados relacional**, com foco em **boas práticas de modelagem**, **organização de código** e **validação conceitual do modelo de dados**.
+Este projeto consiste no desenvolvimento de um **Sistema de Gerenciamento de Biblioteca**, com foco na modelagem, organização e validação da camada de dados.
 
-O sistema contempla entidades como usuários, alunos, professores, livros, empréstimos e itens de empréstimo, incluindo **herança (generalização/especialização)** e **relacionamentos complexos**, alinhados a um DER consistente.
+A proposta aplica conceitos de **MER** e **DER** para representar corretamente as regras de negócio, evoluindo para uma implementação com **SQLAlchemy ORM**, **SQLite**, testes manuais, testes automatizados com `pytest`, logs de execução e preparação da base para uma futura API com Flask.
+
+O sistema contempla entidades como usuários, alunos, professores, funcionários, livros, empréstimos e itens de empréstimo, incluindo herança ORM e relacionamentos entre as principais entidades do domínio.
+
 
 ---
 
 ## 🎯 Objetivos do Projeto
 
-- Aplicar conceitos de **modelagem conceitual, lógica e física**;
-- Implementar **ORM com SQLAlchemy**;
-- Utilizar **herança ORM** para representar especializações/generalizações;
-- Garantir **integridade referencial** entre entidades;
-- Organizar o projeto de forma profissional e escalável;
-- Separar claramente **código de domínio**, **testes** e **exploração**.
+## Objetivos do Projeto
+
+- Aplicar conceitos de modelagem conceitual, lógica e física;
+- Implementar ORM com SQLAlchemy;
+- Representar herança, generalização e especialização;
+- Garantir integridade referencial entre entidades;
+- Validar os models com testes manuais e automatizados;
+- Preparar o projeto para evolução com API e interface web;
+- Organizar o código de forma modular, escalável e profissional.
 
 ---
 
@@ -113,18 +121,56 @@ O SQLite se mostra **mais apropriado que o DuckDB**.
 
 ---
 
+## Evolução do Projeto:
+
+O projeto evoluiu em etapas:
+
+1. Modelagem conceitual e lógica com apoio de notebooks;
+2. Implementação dos models ORM com SQLAlchemy;
+3. Criação do banco oficial `project_biblioteca.db`;
+4. Validação da conexão e dos CRUDs principais;
+5. Criação de testes automatizados com `pytest`;
+6. Configuração de logs de execução;
+7. Integração inicial com Flask, Flask-SQLAlchemy e Flask-Migrate;
+8. Preparação para versionamento do banco com Alembic.
+
+---
+
+## Execução:
+
+Abra o terminal na pasta project_biblioteca_2 e rode:
+
+`python -m create_db`
+
+
+## Banco de Dados:
+
+O banco oficial do projeto é:
+
+```text
+project_biblioteca.db
+```
+
 ## 🧠 Tecnologias Utilizadas
 
 - Python 3.11+
-- SQLAlchemy 
+- SQLAlchemy ORM
 - SQLite
+- Pytest
+- Logging
+- Flask
+- Flask-SQLAlchemy
+- Flask-Migrate
+- Alembic
 - Jupyter Notebook
 - Conda / Ambiente virtual
 - Git e GitHub
 
 ---
 
-## 📂 Estrutura do Projeto
+*O banco biblioteca.db, criado durante explorações em notebooks, foi mantido como legado e não é utilizado na etapa modular atual.*
+
+## 📂 Estrutura do projeto legado:
 
 ```
 project_biblioteca/
@@ -158,7 +204,7 @@ project_biblioteca/
 ├── requirements.txt
 └── README.md
 ```
-## 📂📂 Estrutura atual do Projeto:
+## 📂 Estrutura atual do Projeto:
 
 ```
 project_biblioteca_2/
@@ -203,6 +249,84 @@ project_biblioteca_2/
 Abra o terminal na pasta project_biblioteca_2 e rode:
 
 `python -m create_db`
+
+### Testes:
+
+O projeto possui testes manuais e automatizados.
+
+```
+tests/
+├── manuais/
+│   ├── test_conexao.py
+│   ├── crud_test.py
+│   └── crud_emprestimo_test.py
+│
+└── automatizados/
+    ├── conftest.py
+    └── test_crud_models.py
+```
+
+Os testes validam:
+
+- conexão com o banco;
+- CRUD de Livro;
+- CRUD de Usuario;
+- CRUD de Funcionario;
+- criação de Emprestimo com ItemEmprestimo;
+- relacionamentos entre as entidades;
+- criação das tabelas em banco SQLite em memória.
+
+### Para executar:
+
+```
+pytest
+```
+
+## Flask & Migrations:
+
+> A base Flask foi adicionada para preparar o projeto para a futura API.
+
+**Foram configurados:**
+
+- Flask;
+- Flask-SQLAlchemy;
+- Flask-Migrate;
+- Alembic;
+- rota inicial /initial;
+- reaproveitamento da Base.metadata dos models existentes.
+
+### A aplicação pode ser inspecionada com:
+
+```
+flask --app wsgi:app routes
+```
+
+### A estrutura de migrations foi inicializada com:
+
+```
+flask --app wsgi:app db init
+```
+
+> Mais detalhes técnicos dessa etapa estão documentados em:
+
+```
+src/README.md
+```
+
+### Status Atual:
+
+A camada ORM já foi validada com testes manuais e automatizados. A base Flask e o controle inicial de migrations também foram preparados.
+
+A próxima etapa será a construção da API, começando pelos endpoints.
+
+### Próximos Passos:
+
+- Criar endpoints 
+- Expandir API 
+- Criar camada de serviços;
+- Adicionar testes para a API;
+- Evoluir para interface web.
+
 
 ## 👤 Autor do Projeto:
 
