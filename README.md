@@ -152,6 +152,7 @@ project_biblioteca/
 ```
 ## 📂📂 Estrutura atual do Projeto:
 
+```
 project_biblioteca_2/
 │
 ├── notebooks/
@@ -187,6 +188,7 @@ project_biblioteca_2/
 ├── requirements.txt
 ├── LICENSE
 └── README.md
+```
 
 ## Execução:
 
