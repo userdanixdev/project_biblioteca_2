@@ -22,6 +22,8 @@ O sistema contempla entidades como usuários, alunos, professores, livros, empr�
 
 ## 🎯 Objetivos do Projeto
 
+## Objetivos do Projeto
+
 - Aplicar conceitos de modelagem conceitual, lógica e física;
 - Implementar ORM com SQLAlchemy;
 - Representar herança, generalização e especialização;
@@ -148,6 +150,8 @@ O projeto evoluiu em etapas:
 8. Preparação para versionamento do banco com Alembic.
 
 ---
+
+![Fluxo Flask-SQLAlchemy e Flask-Migrate](src/docs/flask_migrate_flow.png)
 
 ## Execução:
 
