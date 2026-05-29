@@ -117,8 +117,14 @@ O SQLite se mostra **mais apropriado que o DuckDB**.
 ## 🧠 Tecnologias Utilizadas
 
 - Python 3.11+
-- SQLAlchemy 
+- SQLAlchemy ORM
 - SQLite
+- Pytest
+- Logging
+- Flask
+- Flask-SQLAlchemy
+- Flask-Migrate
+- Alembic
 - Jupyter Notebook
 - Conda / Ambiente virtual
 - Git e GitHub
@@ -159,6 +165,44 @@ project_biblioteca/
 ├── requirements.txt
 └── README.md
 ```
+## 📂📂 Estrutura atual do Projeto:
+
+project_biblioteca_2/
+│
+├── notebooks/
+│   ├── 01_biblioteca.ipynb
+│   ├── 02_modelagens.ipynb
+│   └── 03_testes_ORM.ipynb
+│
+├── src/
+│   ├── database/
+│   │   ├── base.py
+│   │   └── connection.py
+│   │
+│   ├── models/
+│   │   ├── usuario.py
+│   │   ├── livro.py
+│   │   ├── funcionario.py
+│   │   ├── emprestimo.py
+│   │   └── item_emprestimo.py
+│   │
+│   ├── app.py
+│   ├── config.py
+│   ├── extensions.py
+│   └── create_db.py
+│
+├── tests/
+│   ├── manuais/
+│   └── automatizados/
+│
+├── migrations/
+├── logs/
+├── wsgi.py
+├── pytest.ini
+├── requirements.txt
+├── LICENSE
+└── README.md
+
 ## Execução:
 
 Abra o terminal na pasta project_biblioteca_2 e rode:
@@ -237,12 +281,37 @@ A aplicação pode ser inspecionada com:
 ```
 flask --app wsgi:app routes
 ```
+A estrutura de migrations foi inicializada com:
+
+```
+flask --app wsgi:app db init
+```
+
+Mais detalhes técnicos dessa etapa estão documentados em:
+
+```
+src/README.md
+```
+## Status Atual:
+
+A camada ORM já foi validada com testes manuais e automatizados. A base Flask e o controle inicial de migrations também foram preparados.
+
+A próxima etapa será a construção da API, começando pelos endpoints.
+
+## Próximos Passos:
+
+- Criar endpoints 
+- Expandir API 
+- Criar camadas de serviços;
+- Adicionar testes para a API;
+- Evoluir para interface web.
+
 
 ## 👤 Autor do Projeto:
 
 **Daniel Martins França**
 
-Projeto desenvolvido com foco em modelagem de dados, bancos de dados relacionais e integração com Python, aplicando boas práticas desde a fase conceitual até a implementação utilizando ORM.
+*Projeto desenvolvido com foco em modelagem de dados, bancos de dados relacionais, ORM, testes e evolução para aplicações web.*
 
 ## 📬 Contato:
 
