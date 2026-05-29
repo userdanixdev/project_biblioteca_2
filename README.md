@@ -1,4 +1,4 @@
-# 📚 Projeto Biblioteca — Modelagem de Dados e ORM com SQLAlchemy
+# 📚 Projeto Biblioteca - Modelagem de Dados e ORM com SQLAlchemy
 
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
@@ -16,8 +16,7 @@ Este projeto consiste no desenvolvimento de um **Sistema de Gerenciamento de Bib
 
 A proposta aplica conceitos de **MER** e **DER** para representar corretamente as regras de negócio, evoluindo para uma implementação com **SQLAlchemy ORM**, **SQLite**, testes manuais, testes automatizados com `pytest`, logs de execução e preparação da base para uma futura API com Flask.
 
-O sistema contempla entidades como usuários, alunos, professores, funcionários, livros, empréstimos e itens de empréstimo, incluindo herança ORM e relacionamentos entre as principais entidades do domínio.
-
+O sistema contempla entidades como usuários, alunos, professores, livros, empréstimos e itens de empréstimo, incluindo herança (generalização/especialização) e relacionamentos complexos, alinhados a um DER consistente.
 
 ---
 
@@ -120,6 +119,22 @@ Para um sistema de biblioteca, onde:
 O SQLite se mostra **mais apropriado que o DuckDB**.
 
 ---
+
+## Diagramas do Projeto
+
+A modelagem do sistema foi documentada por meio de diagramas conceitual e lógico, representando as principais entidades, atributos e relacionamentos do domínio de biblioteca.
+
+### Modelo Conceitual - Peter Chen
+
+O modelo conceitual apresenta a visão de alto nível do domínio, destacando as entidades principais e os relacionamentos entre elas.
+
+![Modelo Conceitual - Peter Chen](src/docs/model_data_concept_peter_chen.png)
+
+### Modelo Lógico - James Martin
+
+O modelo lógico detalha a estrutura relacional do sistema, aproximando a modelagem da implementação física no banco de dados.
+
+![Modelo Lógico - James Martin](src/docs/model_data_logic_james_martin.png)
 
 ## Evolução do Projeto:
 
