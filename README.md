@@ -1,5 +1,14 @@
 # 📚 Projeto Biblioteca — Modelagem de Dados e ORM com SQLAlchemy
 
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57)
+![Pytest](https://img.shields.io/badge/Tests-Pytest-green)
+![Flask](https://img.shields.io/badge/Flask-API%20Base-black)
+![Alembic](https://img.shields.io/badge/Migrations-Alembic-orange)
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 ## 📌 Visão Geral
 
 Este projeto tem como objetivo a **modelagem e implementação de um sistema de biblioteca** utilizando **Python**, **SQLAlchemy ORM** e **banco de dados relacional**, com foco em **boas práticas de modelagem**, **organização de código** e **validação conceitual do modelo de dados**.
@@ -155,6 +164,79 @@ project_biblioteca/
 Abra o terminal na pasta project_biblioteca_2 e rode:
 
 `python -m create_db`
+
+## Evolução do Projeto
+
+O projeto evoluiu em etapas:
+
+1. Modelagem conceitual e lógica com apoio de notebooks;
+2. Implementação dos models ORM com SQLAlchemy;
+3. Criação do banco oficial `project_biblioteca.db`;
+4. Validação da conexão e dos CRUDs principais;
+5. Criação de testes automatizados com `pytest`;
+6. Configuração de logs de execução;
+7. Integração inicial com Flask, Flask-SQLAlchemy e Flask-Migrate;
+8. Preparação para versionamento do banco com Alembic.
+
+
+## Banco de Dados
+
+O banco oficial do projeto é:
+
+```text
+project_biblioteca.db
+```
+
+**O banco biblioteca.db, criado durante explorações em notebooks, foi mantido como legado e não é utilizado na etapa modular atual.**
+
+## Testes
+
+*O projeto possui testes manuais e automatizados.*
+
+```
+tests/
+├── manuais/
+│   ├── test_conexao.py
+│   ├── crud_test.py
+│   └── crud_emprestimo_test.py
+│
+└── automatizados/
+    ├── conftest.py
+    └── test_crud_models.py
+```
+### Os testes validam:
+
+- Conexão com o banco;
+- CRUD de Livro;
+- CRUD de Usuario;
+- CRUD de Funcionario;
+- criação de Emprestimo com ItemEmprestimo;
+- relacionamentos entre as entidades;
+- criação das tabelas em banco SQLite em memória.
+
+
+### Para execução:
+```
+pytest
+```
+
+### Flask e Migrations:
+
+A base Flask foi adicionada para preparar o projeto para a futura API.
+
+Foram configurados:
+
+- Flask;
+- Flask-SQLAlchemy;
+- Flask-Migrate;
+- Alembic;
+- rota inicial /health;
+- reaproveitamento da Base.metadata dos models existentes.
+
+A aplicação pode ser inspecionada com:
+```
+flask --app wsgi:app routes
+```
 
 ## 👤 Autor do Projeto:
 
