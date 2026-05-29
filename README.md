@@ -1,5 +1,13 @@
 # 📚 Projeto Biblioteca — Modelagem de Dados e ORM com SQLAlchemy
 
+
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57)
+![Pytest](https://img.shields.io/badge/Tests-Pytest-green)
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 ## 📌 Visão Geral
 
 Este projeto tem como objetivo a **modelagem e implementação de um sistema de biblioteca** utilizando **Python**, **SQLAlchemy ORM** e **banco de dados relacional**, com foco em **boas práticas de modelagem**, **organização de código** e **validação conceitual do modelo de dados**.
