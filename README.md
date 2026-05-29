@@ -275,8 +275,6 @@ Emprestimo
 ItemEmprestimo
 ```
 
-
-
 > Também foram validados os principais relacionamentos:
 
 - usuário possui empréstimos;
